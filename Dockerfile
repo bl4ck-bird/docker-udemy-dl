@@ -13,7 +13,7 @@ RUN apk add --no-cache --virtual .build-deps curl build-base libffi-dev openssl-
     && pip3 install -r /udemy-dl/requirements.txt \
     \
     && rm -rf ~/.cache/pip \
-    && apk --no-cache curl openssl libffi \
+    && apk add --no-cache curl openssl libffi \
     && apk del --no-network .build-deps
 
 RUN mkdir /downloads && chmod a+rw /downloads
